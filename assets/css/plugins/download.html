@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Plugins</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Download Plugins</h1>
+    </header>
+    <div class="container">
+        <ul id="plugin-list">
+            <!-- Plugin items will be dynamically loaded here -->
+        </ul>
+    </div>
+
+    <script>
+        // Fetch and display the list of available plugins
+        fetch('your-plugins-list-endpoint')
+            .then(response => response.json())
+            .then(data => {
+                const pluginList = document.getElementById('plugin-list');
+                data.forEach(plugin => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="${plugin.url}" download>${plugin.name}</a> - ${plugin.description}`;
+                    pluginList.appendChild(li);
+                });
+            });
+    </script>
+</body>
+
+</html>
