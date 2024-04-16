@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Plugin</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Upload a New Plugin</h1>
+    </header>
+    <div class="container">
+        <form action="your-upload-endpoint" method="POST" enctype="multipart/form-data">
+            <label for="plugin-name">Plugin Name:</label>
+            <input type="text" id="plugin-name" name="plugin-name" required>
+
+            <label for="plugin-description">Plugin Description:</label>
+            <textarea id="plugin-description" name="plugin-description" required></textarea>
+
+            <label for="plugin-file">Plugin File:</label>
+            <input type="file" id="plugin-file" name="plugin-file" required>
+
+            <input type="submit" value="Upload Plugin">
+        </form>
+    </div>
+</body>
+
+</html>
